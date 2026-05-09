@@ -1,4 +1,4 @@
-import { KidsTownLogo } from './Logo';
+import { DentalQoreLogo, KidsTownLogo } from './Logo';
 
 export default function Footer() {
   return (
@@ -35,10 +35,9 @@ export default function Footer() {
           </div>
           <div className="col-span-2 sm:col-span-1">
             <h4 className="text-[10px] uppercase tracking-[0.25em] font-black text-green-400 mb-8">Partner</h4>
-            <div className="bg-slate-900 p-4 rounded-2xl border border-slate-800 shadow-xl inline-block group hover:scale-105 transition-transform">
-               <div className="text-[10px] text-slate-500 font-bold mb-2 uppercase tracking-widest text-center">Powered by</div>
-               <img src="https://ais.dentalqore.com/favicon.ico" className="w-8 h-8 mx-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all" alt="DentalQore" />
-               <div className="text-[11px] text-white font-black mt-2 text-center">DentalQore</div>
+            <div className="bg-slate-900 p-6 rounded-[2rem] border border-slate-800 shadow-xl inline-block group hover:scale-105 transition-transform">
+               <div className="text-[10px] text-slate-500 font-bold mb-3 uppercase tracking-widest text-center">Powered by</div>
+               <DentalQoreLogo className="opacity-80 group-hover:opacity-100 transition-all" />
             </div>
           </div>
         </div>

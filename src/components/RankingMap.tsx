@@ -4,21 +4,21 @@ import { MapPin, Shield } from 'lucide-react';
 
 export default function RankingMap() {
   const cities = [
-    { name: 'Syracuse', x: '15%', y: '45%', dominance: '98%', potential: '9,000', delay: 0.2 },
-    { name: 'Layton', x: '55%', y: '60%', dominance: '100%', potential: '20,000', delay: 0.4 },
-    { name: 'Roy', x: '45%', y: '20%', dominance: '96%', potential: '10,000', delay: 0.6 },
+    { name: 'Syracuse', x: '10%', y: '50%', dominance: '98%', potential: '9,000', delay: 0.2 },
+    { name: 'Layton', x: '55%', y: '75%', dominance: '100%', potential: '20,000', delay: 0.4 },
+    { name: 'Roy', x: '60%', y: '25%', dominance: '96%', potential: '10,000', delay: 0.6 },
   ];
 
   return (
-    <div className="mt-8 relative w-full aspect-[21/9] bg-slate-900 rounded-[3rem] overflow-hidden border-4 border-slate-100 dark:border-slate-800 shadow-2xl group transition-all duration-700">
+    <div className="mt-8 relative w-full aspect-[4/6] sm:aspect-[16/10] md:aspect-[21/11] bg-slate-900 rounded-[3rem] overflow-hidden border-4 border-slate-100 dark:border-slate-800 shadow-2xl group transition-all duration-700">
       {/* Playful Background Pattern */}
       <div className="absolute inset-0 opacity-10 bg-playful-dots text-white pointer-events-none" />
       
       {/* Legend / Correlation Header */}
       <div className="absolute top-6 left-8 z-10">
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-[2rem] shadow-2xl">
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 px-5 py-2.5 rounded-[1.5rem] shadow-2xl">
           <div className="text-[9px] uppercase tracking-[0.3em] font-black text-sky-400 mb-1">Market Reach Correlation</div>
-          <div className="text-xs text-white font-bold">Rank Dominance × Local Family Density</div>
+          <div className="text-[11px] text-white font-bold">Rank Dominance × Local Families</div>
         </div>
       </div>
 
@@ -100,21 +100,21 @@ export default function RankingMap() {
             className="absolute -inset-6 bg-white/10 rounded-full"
           />
           
-          <div className="relative flex items-center gap-4">
-             <div className="bg-orange-500 p-2.5 rounded-2xl shadow-[0_10px_20px_rgba(249,115,22,0.4)] border-2 border-white/20">
-                <Shield className="w-4 h-4 text-white" strokeWidth={3} />
+          <div className="relative flex items-center gap-3">
+             <div className="bg-orange-500 p-2 rounded-xl shadow-[0_10px_20px_rgba(249,115,22,0.4)] border-2 border-white/20">
+                <Shield className="w-3.5 h-3.5 text-white" strokeWidth={3} />
              </div>
              
-             <div className="bg-white/10 backdrop-blur-2xl border-2 border-white/10 px-5 py-3 rounded-[1.5rem] shadow-2xl">
-                <div className="text-[11px] uppercase tracking-[0.15em] font-black text-white mb-1.5 whitespace-nowrap">{city.name}</div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.5)]" />
-                    <span className="text-xs font-black text-white/90 tracking-tight">{city.dominance} Dominance</span>
+             <div className="bg-white/10 backdrop-blur-2xl border-2 border-white/10 px-4 py-2 rounded-[1.25rem] shadow-2xl">
+                <div className="text-[10px] uppercase tracking-[0.1em] font-black text-white mb-1 whitespace-nowrap">{city.name}</div>
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.5)]" />
+                    <span className="text-[11px] font-black text-white/90 tracking-tight">{city.dominance} Dominance</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-sky-400 rounded-full shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
-                    <span className="text-[10px] font-bold text-white/70 tracking-tight">{city.potential} Families</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-sky-400 rounded-full shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+                    <span className="text-[9px] font-bold text-white/70 tracking-tight">{city.potential} Families</span>
                   </div>
                 </div>
              </div>
@@ -126,10 +126,9 @@ export default function RankingMap() {
       <div className="absolute bottom-6 right-8 flex items-center gap-3">
         <div className="flex -space-x-1.5">
           {[1, 2, 3].map(i => (
-            <div key={i} className="w-3 h-3 rounded-full border-2 border-slate-900 bg-orange-400" />
+            <div key={i} className="w-2.5 h-2.5 rounded-full border-2 border-slate-900 bg-orange-400" />
           ))}
         </div>
-        <span className="text-[10px] font-black text-white/50 uppercase tracking-[0.3em]">Patient Acquisition Engine Active</span>
       </div>
     </div>
   );
