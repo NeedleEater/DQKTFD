@@ -1,17 +1,14 @@
 import { Sparkles, Activity } from 'lucide-react';
+import dentalQoreLogo from '../assets/dentalqore_logo.png';
+import kidsTownLogo from '../assets/kidstown_logo.png';
 
 export function DentalQoreLogo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <img 
-        src="/dentalqore_logo.png" 
+        src={dentalQoreLogo} 
         alt="DentalQore Logo" 
         className="h-12 w-auto object-contain max-w-[180px]"
-        onError={(e) => {
-          e.currentTarget.style.display = 'none';
-          const sibling = e.currentTarget.nextElementSibling;
-          if (sibling) (sibling as HTMLElement).style.display = 'block';
-        }}
       />
       <div className="hidden items-center gap-2">
         <div className="bg-blue-600 p-1.5 rounded-lg">
@@ -29,14 +26,9 @@ export function KidsTownLogo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <img 
-        src="/kidstown_logo.png" 
+        src={kidsTownLogo} 
         alt="Kids Town Logo" 
         className="h-16 w-auto object-contain max-w-[200px]"
-        onError={(e) => {
-          e.currentTarget.style.display = 'none';
-          const sibling = e.currentTarget.nextElementSibling;
-          if (sibling) (sibling as HTMLElement).style.display = 'block';
-        }}
       />
       <div className="hidden items-center gap-2">
         <div className="bg-sky-400 p-1.5 rounded-full">
