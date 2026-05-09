@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { ShieldCheck, TrendingUp, Users, PhoneCall } from 'lucide-react';
 import { cn } from '../lib/utils';
 
-import { DentalQoreLogo, KidsTownLogo } from './Logo';
+import { KidsTownLogo } from './Logo';
 
 export default function Hero() {
   return (
@@ -17,14 +17,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
+          className="flex items-center justify-center mb-12"
         >
-          <div className="bg-slate-900 p-4 rounded-3xl border border-slate-800 shadow-xl">
-             <DentalQoreLogo />
-          </div>
-          <div className="hidden sm:block h-10 w-px bg-slate-300 dark:bg-white/20" />
-          <div className="bg-white dark:bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-slate-200 dark:border-white/10 shadow-sm">
-             <KidsTownLogo />
+          <div className="bg-white dark:bg-white/5 backdrop-blur-md p-6 rounded-[3rem] border border-slate-200 dark:border-white/10 shadow-xl">
+             <KidsTownLogo imgClassName="h-32 md:h-48 w-auto object-contain" />
           </div>
         </motion.div>
 

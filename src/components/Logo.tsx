@@ -22,13 +22,13 @@ export function DentalQoreLogo({ className = "" }: { className?: string }) {
   );
 }
 
-export function KidsTownLogo({ className = "" }: { className?: string }) {
+export function KidsTownLogo({ className = "", imgClassName = "h-16 w-auto object-contain max-w-[200px]" }: { className?: string, imgClassName?: string }) {
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <img 
         src={kidsTownLogo} 
         alt="Kids Town Logo" 
-        className="h-16 w-auto object-contain max-w-[200px]"
+        className={imgClassName}
       />
       <div className="hidden items-center gap-2">
         <div className="bg-sky-400 p-1.5 rounded-full">
