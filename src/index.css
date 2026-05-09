@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -12,11 +18,18 @@
   }
   
   body {
-    @apply bg-white text-slate-900 transition-colors duration-500 overflow-x-hidden;
+    @apply bg-white text-slate-800 transition-colors duration-500 overflow-x-hidden font-sans;
   }
   
   body.dark {
-    @apply bg-slate-950 text-slate-50;
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+@layer utilities {
+  .bg-playful-dots {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 

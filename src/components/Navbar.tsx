@@ -20,32 +20,32 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-end items-center px-6 py-4 gap-4 transition-all duration-500">
-      <div className="flex items-center gap-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-white/10 p-1.5 rounded-full shadow-lg transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-end items-center px-6 py-6 gap-4 transition-all duration-500">
+      <div className="flex items-center gap-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-2 border-slate-100 dark:border-white/10 p-2 rounded-[2rem] shadow-2xl shadow-sky-900/10 transition-all duration-300">
         <button
           id="theme-toggle"
           onClick={toggleTheme}
-          className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white"
+          className="p-2.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all text-slate-800 dark:text-white active:scale-95"
           aria-label="Toggle Theme"
         >
           {isDark ? (
-            <Sun className="w-5 h-5 text-yellow-500" />
+            <Sun className="w-6 h-6 text-orange-400 fill-orange-400" />
           ) : (
-            <Moon className="w-5 h-5 text-indigo-600" />
+            <Moon className="w-6 h-6 text-sky-600 fill-sky-600" />
           )}
         </button>
         
-        <div className="w-px h-6 bg-slate-200 dark:bg-white/20" />
+        <div className="w-px h-8 bg-slate-200 dark:bg-white/20" />
         
         <a
           id="website-link"
           href="https://www.kidstowndental.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold transition-all shadow-md hover:shadow-blue-600/20"
+          className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-orange-500 hover:bg-orange-400 text-white text-sm font-black transition-all shadow-xl shadow-orange-500/20 active:scale-95"
         >
           <span className="hidden sm:inline">Visit</span> Website
-          <ExternalLink className="w-4 h-4" />
+          <ExternalLink className="w-4 h-4 stroke-[3]" />
         </a>
       </div>
     </nav>
