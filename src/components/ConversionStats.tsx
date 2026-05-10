@@ -29,7 +29,7 @@ export default function ConversionStats() {
           </motion.h2>
           <div className="bg-orange-100/50 dark:bg-orange-500/10 px-8 py-4 rounded-[2rem] inline-block border border-orange-200/50 dark:border-orange-500/20">
             <p className="text-orange-700 dark:text-orange-400 font-bold italic text-lg">
-              "{CORE_STATS.clickToCall} {CORE_STATS.callsLabel.toLowerCase()} – real phone call opportunities that grow a practice."
+              {CORE_STATS.clickToCall} calls initiated from organic search traffic to this site in the last 12 months.
             </p>
           </div>
         </div>

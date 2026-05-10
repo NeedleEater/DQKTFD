@@ -101,9 +101,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-2xl mx-auto text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-16 font-medium leading-relaxed"
+          className="max-w-3xl mx-auto text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-16 font-medium leading-relaxed"
         >
-          How DentalQore transformed Kids Town pediatric dentistry into a local powerhouse, turning visibility into 200+ new patients every month.
+          With 7+ years on DentalQore’s web and SEO platform and our media package add‑on, Kids Town Family Dentistry now dominates local search and drives 200+ new patients every month.
         </motion.p>
 
         <motion.div

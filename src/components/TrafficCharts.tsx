@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { 
   AreaChart, 
   Area, 
+  Line,
   XAxis, 
   YAxis, 
   CartesianGrid, 
@@ -35,8 +36,7 @@ export default function TrafficCharts() {
               Organic Visibility <span className="text-orange-500">Dominance</span>
             </motion.h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-              DentalQore’s SEO-focused website structure doesn't just attract traffic—it captures intent. 
-              Our organic strategy consistently outpaces baseline direct traffic, building a sustainable growth engine.
+              DentalQore’s SEO strategy captures intent—not just traffic. Over the past 12 months, direct traffic has increased, while organic traffic has become more targeted—driving fewer visits overall but higher engagement and stronger conversion rates.
             </p>
           </div>
           <div className="flex gap-10 bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-sky-900/5 items-center">
@@ -69,8 +69,8 @@ export default function TrafficCharts() {
                   <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0}/>
                 </linearGradient>
                 <linearGradient id="colorDirect" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#f97316" stopOpacity={0.2}/>
-                  <stop offset="95%" stopColor="#f97316" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#64748b" stopOpacity={0.2}/>
+                  <stop offset="95%" stopColor="#64748b" stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="6 6" vertical={false} stroke="#e2e8f0" className="opacity-10" />
@@ -82,9 +82,17 @@ export default function TrafficCharts() {
                 dy={15}
               />
               <YAxis 
+                yAxisId="left"
                 axisLine={false} 
                 tickLine={false} 
                 tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 600 }} 
+              />
+              <YAxis 
+                yAxisId="right"
+                orientation="right"
+                axisLine={false} 
+                tickLine={false} 
+                tick={{ fill: '#f97316', fontSize: 11, fontWeight: 600 }} 
               />
               <Tooltip 
                 contentStyle={{ 
@@ -96,9 +104,11 @@ export default function TrafficCharts() {
                   backdropFilter: 'blur(10px)',
                   color: '#1e293b'
                 }}
+                formatter={(value: number, name: string) => [value, name === 'calls' ? 'Click to Call' : name]}
               />
               <Legend verticalAlign="top" align="right" iconType="circle" height={50} />
               <Area 
+                yAxisId="left"
                 type="monotone" 
                 dataKey="organic" 
                 name="Organic Search"
@@ -108,13 +118,24 @@ export default function TrafficCharts() {
                 fill="url(#colorOrganic)" 
               />
               <Area 
+                yAxisId="left"
                 type="monotone" 
                 dataKey="direct" 
                 name="Direct Traffic"
-                stroke="#f97316" 
+                stroke="#64748b" 
                 strokeWidth={5}
                 fillOpacity={1} 
                 fill="url(#colorDirect)" 
+              />
+              <Line
+                yAxisId="right"
+                type="monotone"
+                dataKey="calls"
+                name="Click to Call"
+                stroke="#f97316"
+                strokeWidth={4}
+                dot={{ r: 4, fill: '#f97316', strokeWidth: 2, stroke: '#fff' }}
+                activeDot={{ r: 6, strokeWidth: 0 }}
               />
             </AreaChart>
           </ResponsiveContainer>
